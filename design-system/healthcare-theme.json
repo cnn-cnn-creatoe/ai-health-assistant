@@ -1,0 +1,164 @@
+{
+  "theme": {
+    "name": "Healthcare Theme",
+    "description": "医疗健康行业专用设计系统主题",
+    "version": "1.0.0"
+  },
+  "colors": {
+    "primary": {
+      "medicalBlue": "#4A90E2",
+      "healthGreen": "#52C41A",
+      "description": "主色调：医疗蓝代表专业和信任，健康绿代表活力和希望"
+    },
+    "secondary": {
+      "warningOrange": "#FA8C16",
+      "dangerRed": "#F5222D",
+      "infoCyan": "#13C2C2",
+      "description": "辅助色：用于警告、危险提示和信息展示"
+    },
+    "neutral": {
+      "gray50": "#FAFAFA",
+      "gray100": "#F5F5F5",
+      "gray200": "#E8E8E8",
+      "gray300": "#D9D9D9",
+      "gray400": "#BFBFBF",
+      "gray500": "#8C8C8C",
+      "gray600": "#595959",
+      "gray700": "#434343",
+      "gray800": "#262626",
+      "gray900": "#1F1F1F",
+      "white": "#FFFFFF",
+      "black": "#000000",
+      "description": "中性色：确保高对比度和可读性，符合 WCAG 标准"
+    },
+    "semantic": {
+      "success": "#52C41A",
+      "warning": "#FA8C16",
+      "error": "#F5222D",
+      "info": "#4A90E2",
+      "description": "语义化颜色：用于状态提示和反馈"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+      "mono": "'Fira Code', 'Courier New', monospace",
+      "description": "字体：无衬线字体，清晰易读，符合医疗行业专业感"
+    },
+    "fontSizes": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "18px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "30px",
+      "4xl": "36px",
+      "5xl": "48px"
+    },
+    "fontWeights": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeights": {
+      "tight": 1.25,
+      "normal": 1.5,
+      "relaxed": 1.75
+    }
+  },
+  "spacing": {
+    "scale": [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128],
+    "description": "间距系统：基于 4px 的间距系统，确保视觉一致性"
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "4px",
+    "base": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px",
+    "description": "圆角：适度的圆角增加友好感，但保持专业"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+    "base": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    "description": "阴影：轻微阴影增加层次感，避免过度装饰"
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "backgroundColor": "#4A90E2",
+        "color": "#FFFFFF",
+        "borderRadius": "8px",
+        "padding": "12px 24px",
+        "fontWeight": 500
+      },
+      "secondary": {
+        "backgroundColor": "#F5F5F5",
+        "color": "#262626",
+        "borderRadius": "8px",
+        "padding": "12px 24px"
+      },
+      "danger": {
+        "backgroundColor": "#F5222D",
+        "color": "#FFFFFF",
+        "borderRadius": "8px",
+        "padding": "12px 24px"
+      }
+    },
+    "card": {
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": "12px",
+      "padding": "24px",
+      "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+    },
+    "input": {
+      "borderColor": "#D9D9D9",
+      "borderRadius": "8px",
+      "padding": "12px 16px",
+      "focusBorderColor": "#4A90E2"
+    }
+  },
+  "charts": {
+    "types": ["line", "bar", "pie", "area", "scatter"],
+    "colors": ["#4A90E2", "#52C41A", "#FA8C16", "#F5222D", "#13C2C2"],
+    "description": "图表类型：推荐使用折线图展示健康趋势，柱状图展示统计数据"
+  },
+  "accessibility": {
+    "contrastRatio": {
+      "minimum": 4.5,
+      "enhanced": 7.0,
+      "description": "对比度：确保文本和背景的对比度符合 WCAG AA 标准（至少 4.5:1）"
+    },
+    "colorBlindSupport": true,
+    "keyboardNavigation": true,
+    "screenReaderSupport": true,
+    "description": "可访问性：支持色盲模式、键盘导航和屏幕阅读器"
+  },
+  "responsive": {
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px"
+    },
+    "description": "响应式断点：支持移动端、平板和桌面端"
+  },
+  "guidelines": {
+    "medicalProfessionalism": "保持医疗专业性，界面清晰、可信、符合医疗行业规范",
+    "privacySecurity": "强调数据隐私和安全性提示，符合 HIPAA 合规要求",
+    "userExperience": "操作简单、反馈及时、错误处理友好",
+    "visualHierarchy": "使用清晰的视觉层次，重要信息突出显示",
+    "errorHandling": "友好的错误提示，避免使用技术术语",
+    "loadingStates": "提供清晰的加载状态反馈",
+    "emptyStates": "友好的空状态提示，引导用户操作"
+  }
+}

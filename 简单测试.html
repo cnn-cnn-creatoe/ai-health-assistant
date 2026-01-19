@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Assistant - 快速测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status.ok { background: #52c41a; color: white; }
+        .status.error { background: #f5222d; color: white; }
+        .status.loading { background: #faad14; color: white; }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #357abd; }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 AI Health Assistant - 服务器测试</h1>
+    
+    <div class="test-card">
+        <h2>后端服务器测试</h2>
+        <p>URL: <code>http://localhost:8000</code></p>
+        <button onclick="testBackend()">测试后端</button>
+        <div id="backend-result" class="result" style="display:none;"></div>
+    </div>
+    
+    <div class="test-card">
+        <h2>前端服务器测试</h2>
+        <p>URL: <code>http://localhost:5003</code></p>
+        <button onclick="testFrontend()">测试前端</button>
+        <div id="frontend-result" class="result" style="display:none;"></div>
+    </div>
+    
+    <div class="test-card">
+        <h2>API 端点测试</h2>
+        <button onclick="testHealthData()">测试健康数据 API</button>
+        <button onclick="testChat()">测试对话 API</button>
+        <div id="api-result" class="result" style="display:none;"></div>
+    </div>
+    
+    <div class="test-card">
+        <h2>快速链接</h2>
+        <p>
+            <a href="http://localhost:5003" target="_blank">打开前端应用</a> |
+            <a href="http://localhost:8000/docs" target="_blank">打开 API 文档</a>
+        </p>
+    </div>
+
+    <script>
+        async function testBackend() {
+            const result = document.getElementById('backend-result');
+            result.style.display = 'block';
+            result.textContent = '测试中...';
+            
+            try {
+                const response = await fetch('http://localhost:8000/health');
+                const data = await response.json();
+                result.textContent = `✓ 后端运行正常\n状态码: ${response.status}\n响应: ${JSON.stringify(data, null, 2)}`;
+                result.style.background = '#d4edda';
+            } catch (error) {
+                result.textContent = `✗ 后端连接失败\n错误: ${error.message}\n\n请确保后端服务器正在运行:\ncd backend\n.\venv\Scripts\python.exe run.py`;
+                result.style.background = '#f8d7da';
+            }
+        }
+        
+        async function testFrontend() {
+            const result = document.getElementById('frontend-result');
+            result.style.display = 'block';
+            result.textContent = '测试中...';
+            
+            try {
+                const response = await fetch('http://localhost:5003');
+                result.textContent = `✓ 前端运行正常\n状态码: ${response.status}\n\n可以访问: http://localhost:5003`;
+                result.style.background = '#d4edda';
+            } catch (error) {
+                result.textContent = `✗ 前端连接失败\n错误: ${error.message}\n\n请确保前端服务器正在运行:\ncd frontend\nnpm run dev`;
+                result.style.background = '#f8d7da';
+            }
+        }
+        
+        async function testHealthData() {
+            const result = document.getElementById('api-result');
+            result.style.display = 'block';
+            result.textContent = '测试中...';
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/health-data');
+                const data = await response.json();
+                result.textContent = `✓ API 调用成功\n状态码: ${response.status}\n数据: ${JSON.stringify(data, null, 2)}`;
+                result.style.background = '#d4edda';
+            } catch (error) {
+                result.textContent = `✗ API 调用失败\n错误: ${error.message}`;
+                result.style.background = '#f8d7da';
+            }
+        }
+        
+        async function testChat() {
+            const result = document.getElementById('api-result');
+            result.style.display = 'block';
+            result.textContent = '测试中...';
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: '测试消息' })
+                });
+                const data = await response.json();
+                result.textContent = `✓ 对话 API 调用成功\n状态码: ${response.status}\n响应: ${JSON.stringify(data, null, 2)}`;
+                result.style.background = '#d4edda';
+            } catch (error) {
+                result.textContent = `✗ 对话 API 调用失败\n错误: ${error.message}\n\n注意: 如果设置了 OPENAI_API_KEY，应该会收到 AI 回复`;
+                result.style.background = '#f8d7da';
+            }
+        }
+        
+        // 自动测试
+        window.onload = function() {
+            setTimeout(() => {
+                testBackend();
+                setTimeout(() => testFrontend(), 1000);
+            }, 500);
+        };
+    </script>
+</body>
+</html>

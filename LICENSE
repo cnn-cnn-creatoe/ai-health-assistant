@@ -1,0 +1,50 @@
+MIT License
+
+Copyright (c) 2024 AI Health Assistant Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 医疗免责声明
+
+本软件（"AI Health Assistant"）仅供学习和参考使用，不提供医疗诊断、治疗或处方服务。
+
+### 重要提示：
+
+1. **非医疗建议**：本软件提供的健康信息和建议仅供参考，不能替代专业医疗诊断、治疗或处方。
+
+2. **紧急情况**：如出现紧急医疗情况（如胸痛、呼吸困难、意识异常等），请立即拨打120急救电话或前往医院急诊科，不要依赖本软件。
+
+3. **专业咨询**：所有健康问题应咨询专业医生或医疗机构。
+
+4. **数据准确性**：虽然我们努力提供准确的信息，但不保证信息的完整性和准确性。
+
+5. **用户责任**：用户应自行判断信息的适用性，并承担使用本软件的所有风险。
+
+6. **隐私保护**：用户应注意保护个人隐私信息，不要在对话中输入身份证号、住址等敏感信息。
+
+### 使用本软件即表示您同意：
+
+- 理解并接受本软件不提供医疗诊断服务
+- 不会将本软件的建议作为医疗诊断依据
+- 紧急情况会寻求专业医疗帮助
+- 自行承担使用本软件的所有风险
+
+作者和贡献者不对因使用本软件而产生的任何直接或间接损失承担责任。

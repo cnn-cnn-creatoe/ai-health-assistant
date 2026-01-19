@@ -1,0 +1,10 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+# Python 3.12 + pydantic v1 compat requires newer pydantic to avoid ForwardRef._evaluate recursive_guard errors
+pydantic==2.7.4
+python-dotenv==1.0.0
+langchain==0.1.0
+langchain-openai==0.0.2
+langgraph==0.0.20
+openai==1.6.1
+python-multipart==0.0.6
